@@ -1,0 +1,80 @@
+###
+### Rejestracja użytkownika
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "Rafał@dom.pl",
+  "password": "haslo123",
+  "firstName": "Rafał",
+  "toysLimit": 60
+}
+
+###
+### Pobierz dane zalogowanego użytkownika
+GET http://localhost:8080/api/auth/user/me
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+Content-Type: application/json
+
+###
+### Dodaj dziecko
+POST http://localhost:8080/api/child
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+Content-Type: application/json
+
+{
+  "name": "Julek",
+  "age": 7
+}
+
+###
+### Dodaj zabawkę
+POST http://localhost:8080/api/toys
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+Content-Type: application/json
+
+{
+  "name": "Klocki Lego",
+  "status": "IN_USE",
+  "childId": 6,
+  "tag": ["kreatywne", "kolorowe"]
+}
+
+###
+### Pobierz listę zabawek
+GET http://localhost:8080/api/toys
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+
+###
+### Pobierz wszystkie tagi
+GET http://localhost:8080/api/tags
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+
+###
+### Edytuj zabawkę (ID = 4)
+PUT http://localhost:8080/api/toys/5
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+Content-Type: application/json
+
+{
+  "name": "Klocki Lego XL",
+  "status": "BORROWED",
+  "loanedTo": "Ciocia Ania",
+  "returnDeadline": "2025-04-15",
+  "tag": ["kreatywne", "pożyczone"],
+  "childId": 6
+}
+
+###
+### Usuń zabawkę (ID = 4)
+DELETE http://localhost:8080/api/toys/4
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+
+### Zabawki do oddania w ciągu 3 dni — Rafał
+GET http://localhost:8080/api/toys/notifications
+Authorization: Basic UmFmYcWCQGRvbS5wbDpoYXNsbzEyMw==
+Content-Type: application/json
+
+###
+### Próba bez autoryzacji (powinno dać 401)
+GET http://localhost:8080/api/toys
