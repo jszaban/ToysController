@@ -23,7 +23,7 @@ Projekt powstał z myślą o organizacji zabawek w rodzinie. Użytkownicy loguj�
 - 🏷️ **Tagowanie zabawek** – relacja wiele-do-wielu
 - 📬 **Powiadomienia o zbliżającym się terminie zwrotu**
 - 📚 **Swagger/OpenAPI** – pełna dokumentacja endpointów
-- 🧪 **HTTP Client** z plikami `.http` i środowiskami użytkowników
+- 🧪 **Plikami `.http`** ze środowiskami użytkowników
 
 ---
 
