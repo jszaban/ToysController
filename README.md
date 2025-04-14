@@ -18,7 +18,7 @@ Projekt powstał z myślą o organizacji zabawek w rodzinie. Użytkownicy loguj�
 - 👶 **Dzieci** przypisane do rodziców
 - 🧸 **Zabawki**:
   - przypisane do dziecka
-  - statusy: `USED`, `BORROWED`, `IN_USE`, `FOR_SALE`
+  - statusy: `IN_USE`, `FOR_SALE`, `GIVEAWAY`, `BORROWED`
   - opcjonalnie: wypożyczenie, termin zwrotu
 - 🏷️ **Tagowanie zabawek** – relacja wiele-do-wielu
 - 📬 **Powiadomienia o zbliżającym się terminie zwrotu**
